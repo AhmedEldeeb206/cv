@@ -1,136 +1,574 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 
-  <head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV - Ahmed Samir Eldeeb</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-  </head>
+    <title>Ahmed Samir Mostafa El-Deeb - CV</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
 
-  <body>
+    <style>
+        :root {
+            --primary-color: #0d6efd;
+            --bg-light: #f8f9fa;
+            --bg-dark: #121212;
+            --card-dark: #1e1e1e;
+        }
 
-    <div class="container my-5">
-      <div class="row">
-        <div class="col-md-4 text-center  mb-3">
-          <!-- Profile picture -->
-          <div class="profile-img-container">
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-light);
+            color: #212529;
+            transition: background-color 0.3s, color 0.3s;
+            scroll-behavior: smooth;
+        }
 
-            <img src="ahmed.png" alt="Profile Picture" class="profile-img mb-3">
-          </div>
+        html[dir="rtl"] body {
+            font-family: 'Cairo', sans-serif;
+        }
 
-          <h2 class="name">Ahmed Samir Eldeeb</h2>
-          <p>
-            <a title="Click To Send An Email Message" class="gmail"
-              href="https://mail.google.com/mail/?view=cm&fs=1&to=ahmedwork206@gmail.com" target="_blank">
-              <i class="bi bi-envelope"></i> ahmedwork206@gmail.com
-            </a>
-          </p>
-          <p>
-            <a class="phone" title="Click To Call Or Send A WhatsApp Message" href="#" data-bs-toggle="modal"
-              data-bs-target="#contactModal">
-              <i class="bi bi-whatsapp"></i> +201005137642
-            </a>
-          </p>
+        /* --- Dark Mode --- */
+        body.dark-mode {
+            background-color: var(--bg-dark);
+            color: #f8f9fa;
+            --primary-color: #ffe082;
+        }
 
-          <!-- Modal -->
-          <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel"
-            aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="contactModalLabel">Choose communication</h5>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body text-center">
-                  <a href="tel:+201005137642" class="btn btn-primary w-100 mb-2">Phone call <i
-                      class="bi bi-telephone-outbound"></i></a>
-                  <a href="https://wa.me/201005137642" target="_blank" class="btn btn-success w-100">WhatsApp <i
-                      class="bi bi-whatsapp"></i></a>
-                </div>
-              </div>
+        .dark-mode .text-primary,
+        .dark-mode .navbar-brand {
+            color: #ffe082 !important;
+        }
+
+        .dark-mode .fas:not(.btn .fas),
+        .dark-mode .fab:not(.btn .fab),
+        .dark-mode .far:not(.btn .far) {
+            color: #ffe082 !important;
+        }
+
+        .dark-mode .btn-primary {
+            background-color: #ffe082 !important;
+            border-color: #ffe082 !important;
+            color: #121212 !important;
+            font-weight: 600;
+        }
+
+        .dark-mode .btn-primary .fas,
+        .dark-mode .btn-primary i {
+            color: #121212 !important;
+        }
+
+        .dark-mode .navbar {
+            background-color: rgba(18, 18, 18, 0.85) !important;
+            border-bottom-color: #2d2d2d !important;
+        }
+
+        .dark-mode .card,
+        .dark-mode .modal-content {
+            background-color: var(--card-dark) !important;
+            border-color: #2d2d2d !important;
+            color: #f8f9fa !important;
+        }
+
+        .dark-mode .text-muted {
+            color: #aaa !important;
+        }
+
+        .dark-mode .border-bottom {
+            border-bottom-color: #2d2d2d !important;
+        }
+
+        .dark-mode .badge {
+            background-color: #2d2d2d !important;
+            color: #f8f9fa !important;
+        }
+
+        .dark-mode #theme-btn,
+        .dark-mode #lang-btn {
+            color: #ffe082 !important;
+            border-color: rgba(255, 224, 130, 0.4) !important;
+        }
+
+        /* ستايل زر التمرير لأعلى (Scroll To Top) */
+        #scroll-top-btn {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            /* افتراضي لـ LTR */
+            left: auto;
+            z-index: 99;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        /* تغيير اتجاه الزرار تلقائياً بناءً على اتجاه الصفحة */
+        html[dir="rtl"] #scroll-top-btn {
+            right: auto;
+            left: 25px;
+        }
+
+        #scroll-top-btn.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .navbar {
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #dee2e6;
+        }
+
+        /* ستايل الصورة الشخصية */
+        .avatar-container {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background-color: #d3d3d375;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            margin: auto;
+            position: relative;
+            overflow: visible;
+        }
+
+        .profile-img {
+            width: 100%;
+            height: 120%;
+            object-fit: cover;
+            background-color: transparent;
+            display: inline-block;
+            padding-top: 15px;
+            clip-path: ellipse(60% 60% at 50% 40%);
+        }
+
+        .section-title {
+            letter-spacing: 1px;
+            font-weight: 700;
+        }
+
+        .cv-list li {
+            margin-bottom: 8px;
+        }
+
+        .navbar-controls {
+            gap: 3rem !important;
+        }
+    </style>
+</head>
+
+<body id="top-page">
+
+    <!-- الشعار رجع زي ما تحب نص عادي براند شيك -->
+    <nav class="navbar navbar-expand bg-white sticky-top py-3 transition shadow-sm">
+        <div class="container" style="max-width: 850px;">
+
+            <button id="theme-btn" class="btn btn-link text-secondary  p-2 m-0" title="Toggle Theme"
+                style="text-decoration: none; line-height: 1;">
+                <i class="fas fa-moon fs-5 dark-none"></i>
+                <i class="fas fa-sun fs-5 dark-block d-none"></i>
+            </button>
+            <div class="d-flex align-items-center navbar-controls gap-3 ms-auto">
+                <button id="lang-btn" class="btn btn-secondary btn-sm fw-medium px-4 py-2">
+                    العربية
+                </button>
+                <button id="download-btn" class="btn btn-primary btn-sm px-4 py-2 d-flex align-items-center gap-2"
+                    data-bs-toggle="modal" data-bs-target="#downloadModal">
+                    <i class="fas fa-download text-reset"></i>
+                    <span class="lang-en">Download CV</span>
+                    <span class="lang-ar d-none">تحميل الـ CV</span>
+                </button>
             </div>
-          </div>
-
-          <i class="fa fa-whatsapp" aria-hidden="true"></i>
-
-          <p><i class="bi bi-geo-alt"></i> Egypt - Cairo - El-Menoufia</p>
         </div>
-        <div class="col-md-8 content-container">
-          <h3>About Me</h3>
-          <p>
-            As a Data Entry Specialist, I take care of accuracy and speed in data entry and have developed
-            methods
-            to increase efficiency in work. Thanks to my speed in typing on the keyboard, I can accomplish
-            tasks
-            very efficiently and reduce the time required for them. I enjoy fast learning and developing
-            simplified
-            ways of organizing data, making it easier for the team to access information quickly and
-            accurately to
-            make decisions.
-          </p>
+    </nav>
 
-          <h3>Work Experience</h3>
-          <ul>
-            <li>
-              Assistant Account Manager / Egyptian Company for the Supply of Powers of Attorney and Data
-              Entry Officer (9/2023 - 4/2025)
-              <br>
-              Assisted financial account managers in planning and implementing various projects to ensure
-              adherence to project schedules and timely delivery. Tracked project budgets, monitored
-              expenses, and prepared financial reports to ensure cost-effectiveness and adherence to
-              financial guidelines.
-            </li>
-          </ul>
+    <!-- زر التمرير لأعلى العائم -->
+    <button id="scroll-top-btn" class="btn btn-primary" onclick="window.scrollTo(0, 0);" title="Go to top">
+        <i class="fas fa-arrow-up text-reset"></i>
+    </button>
 
-          <h3>Key Competencies</h3>
-          <div class="row">
-            <ul class="competencies col-md-6">
-              <li>Excellent Communication Skills And Teamwork.</li>
-              <li>Ability to Handle Large Amounts of Data</li>
-              <li>Exceptional Organizational Skills.</li>
-              <li>Ability To Work Under Pressure.</li>
-              <li>Fast And Accurate Data Entry.</li>
-            </ul>
-            <ul class="competencies col-md-6">
-              <li>Proactive and Self-Motivated</li>
-              <li>Report Writing and Presenting</li>
-              <li>Excellent Communication Skills</li>
-              <li>Strong Interpersonal Skills</li>
-              <li>Critical Thinking Skills</li>
-            </ul>
-          </div>
+    <!-- المحتوى الرئيسي للموقع -->
+    <div class="container py-5" style="max-width: 850px;">
 
-          <h3>Certificates and Courses</h3>
-          <ul>
-            <li>Modern Association of Computer Technology and Information (2019)</li>
-            <li>Windows Operating System</li>
-            <li>Learn to program websites</li>
-          </ul>
+        <!-- Header Section -->
+        <header class="d-flex flex-column flex-md-row align-items-center gap-4 pb-4 border-bottom">
+            <div class="flex-shrink-0 mb-3 mb-md-0">
+                <div class="avatar-container">
+                    <img src="ahmed.png" alt="Ahmed Samir" class="profile-img"
+                        onerror="this.src='https://via.placeholder.com/200x200?text=Ahmed'">
+                </div>
+            </div>
+            <div class="text-center text-md-start w-100" id="header-text">
+                <h1 class="fw-bold mb-1">
+                    <span class="lang-en">Ahmed Samir Mostafa El-Deeb</span>
+                    <span class="lang-ar d-none">أحمد سمير مصطفى الديب</span>
+                </h1>
+                <p class="text-primary fw-medium mb-3">
+                    <span class="lang-en">IT Specialist &nbsp;|&nbsp; Data Entry &nbsp;|&nbsp; Front-End
+                        Developer</span>
+                    <span class="lang-ar d-none">متخصص تقني (IT) &nbsp;|&nbsp; إدخال البيانات &nbsp;|&nbsp; مطور واجهات
+                        أمامية</span>
+                </p>
+                <div class="d-flex flex-wrap justify-content-center justify-content-md-start gap-3 text-sm text-muted">
+                    <a href="tel:+201005137642" class="text-decoration-none text-reset">
+                        <i class="fas fa-phone text-primary me-1"></i> +201005137642
+                    </a>
+                    <a href="mailto:ahmedwork206@gmail.com" class="text-decoration-none text-reset">
+                        <i class="fas fa-envelope text-primary me-1"></i> ahmedwork206@gmail.com
+                    </a>
+                    <span>
+                        <i class="fas fa-map-marker-alt text-primary me-1"></i>
+                        <span class="lang-en">Cairo, Egypt</span>
+                        <span class="lang-ar d-none">القاهرة، مصر</span>
+                    </span>
+                </div>
+            </div>
+        </header>
 
-          <h3>Skills</h3>
-          <ul>
-            <li>Google Sheets</li>
-            <li>Microsoft Excel</li>
-            <li>Problem Solving</li>
-          </ul>
+        <!-- Professional Summary -->
+        <section class="py-4 border-bottom">
+            <h2 class="h5 section-title text-uppercase fw-bold mb-3 d-flex align-items-center gap-2">
+                <i class="fas fa-user text-primary"></i>
+                <span class="lang-en">Professional Summary</span>
+                <span class="lang-ar d-none">الملخص المهني</span>
+            </h2>
+            <p class="text-muted lh-lg text-justify m-0">
+                <span class="lang-en">Operations and IT specialist with 2+ years of experience in data-heavy
+                    environments and financial workflows. Technical background built on real hands-on work — including
+                    front-end development (Bootstrap, HTML, CSS, JavaScript) on real internal projects. Strong attention
+                    to detail and quick to adapt to any new system or platform.</span>
+                <span class="lang-ar d-none">متخصص تقني في العمليات يمتلك أكثر من عامين من الخبرة في البيئات كثيفة
+                    البيانات والعمليات المالية وسير العمل الرقمي. يتميز بخلفية تقنية قوية مبنية على شغف حقيقي
+                    بالتكنولوجيا، إذ عمل فعلياً في تطوير الواجهات الأمامية (Bootstrap، HTML، CSS، JavaScript) على مشاريع
+                    حقيقية داخل بيئة العمل. هذه الكفاءة التقنية مع الدقة العالية في التفاصيل والقدرة على التكيف السريع
+                    مع أي نظام رقمي، تجعله محترفاً لا يكتفي بإنجاز المهام — بل يفهمها بعمق ويؤديها بأعلى مستوى.</span>
+            </p>
+        </section>
 
-          <h3>Languages</h3>
-          <ul>
-            <li>Arabic</li>
-            <li>English</li>
-          </ul>
-        </div>
-      </div>
+        <!-- Work Experience -->
+        <section class="py-4 border-bottom">
+            <h2 class="h5 section-title text-uppercase fw-bold mb-4 d-flex align-items-center gap-2">
+                <i class="fas fa-briefcase text-primary"></i>
+                <span class="lang-en">Work Experience</span>
+                <span class="lang-ar d-none">الخبرة العملية</span>
+            </h2>
+
+            <div class="d-flex flex-column gap-4">
+                <!-- Job 1 -->
+                <div>
+                    <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-baseline mb-2">
+                        <div>
+                            <h3 class="h6 fw-bold mb-1">
+                                <span class="lang-en">Invoice Processing Officer</span>
+                                <span class="lang-ar d-none">موظف معالجة فواتير</span>
+                            </h3>
+                            <div class="text-primary fw-medium text-sm">
+                                <span class="lang-en">Wonder Travel – Cairo, Egypt</span>
+                                <span class="lang-ar d-none">Wonder Travel – القاهرة، مصر</span>
+                            </div>
+                        </div>
+                        <span
+                            class="badge bg-light text-dark border px-3 py-2 rounded-pill mt-2 mt-md-0 align-self-start">
+                            <span class="lang-en">Nov 2025 – Present</span>
+                            <span class="lang-ar d-none">نوفمبر 2025 – حتى الآن</span>
+                        </span>
+                    </div>
+                    <ul class="cv-list text-muted text-sm ps-3">
+                        <li class="lang-en">Process airline invoices manually through the NDC platform — from data
+                            verification through to account debiting — accurately and on time.</li>
+                        <li class="lang-ar d-none">تولي معالجة فواتير الطيران اليدوية بشكل متكامل عبر منصة NDC، من
+                            التحقق من بيانات الفاتورة وصولاً إلى تنفيذ عمليات خصم الحساب بسرعة ودقة عالية وبدون أخطاء.
+                        </li>
+                        <li class="lang-en">Handle a high daily volume of financial transactions independently, in full
+                            compliance with internal procedures.</li>
+                        <li class="lang-ar d-none">إدارة حجم يومي كبير من المعاملات المالية باستقلالية تامة، مع ضمان
+                            إتمام جميع القيود في وقتها ووفق إجراءات الشركة المالية بالكامل.</li>
+                        <li class="lang-en">Consistently onboard to new internal systems and platforms with minimal
+                            ramp-up time.</li>
+                        <li class="lang-ar d-none">التكيف السريع مع الأنظمة والمنصات الرقمية الداخلية للشركة، مما يعكس
+                            القدرة على إتقان أي أداة أو بيئة تقنية جديدة في أقصر وقت ممكن.</li>
+                    </ul>
+                </div>
+
+                <!-- Job 2 -->
+                <div>
+                    <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-baseline mb-2">
+                        <div>
+                            <h3 class="h6 fw-bold mb-1">
+                                <span class="lang-en">Accounts Assistant / Data Entry Officer</span>
+                                <span class="lang-ar d-none">مساعد مدير حسابات / موظف ادخال بيانات</span>
+                            </h3>
+                            <div class="text-primary fw-medium text-sm">
+                                <span class="lang-en">Egyptian Cosmetics Supply Company – Cairo, Egypt</span>
+                                <span class="lang-ar d-none">الشركة المصرية لتوريد المستحضرات التجميل – القاهرة،
+                                    مصر</span>
+                            </div>
+                        </div>
+                        <span
+                            class="badge bg-light text-dark border px-3 py-2 rounded-pill mt-2 mt-md-0 align-self-start">
+                            <span class="lang-en">Sep 2024 – Oct 2025</span>
+                            <span class="lang-ar d-none">سبتمبر 2024 – اكتوبر 2025</span>
+                        </span>
+                    </div>
+                    <ul class="cv-list text-muted text-sm ps-3">
+                        <li class="lang-en">Supported account managers in project planning and execution, keeping all
+                            deliverables on schedule.</li>
+                        <li class="lang-ar d-none">دعم مديري الحسابات في تخطيط وتنفيذ المشاريع، مع ضمان الالتزام
+                            بالجداول الزمنية وتسليم جميع المهام في مواعيدها المحددة.</li>
+                        <li class="lang-en">Prepared detailed financial reports to track expenses and project budgets.
+                        </li>
+                        <li class="lang-ar d-none">إعداد تقارير مالية تفصيلية لتتبع المصروفات وميزانيات المشاريع، مما
+                            أسهم في تعزيز الرقابة على التكاليف ودعم اتخاذ القرارات المبنية على البيانات.</li>
+                        <li class="lang-en">Contributed to internal web development projects using Bootstrap, HTML, CSS,
+                            JavaScript, building and maintaining internal digital tools alongside administrative duties.
+                        </li>
+                        <li class="lang-ar d-none">المساهمة في مشاريع تطوير الويب الداخلية باستخدام Bootstrap، HTML،
+                            CSS، JavaScript وتطبيق مهارات الواجهات الأمامية في بناء وصيانة الأدوات الرقمية للشركة
+                            بالتوازي مع المهام الإدارية.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technical Skills -->
+        <section class="py-4 border-bottom">
+            <h2 class="h5 section-title text-uppercase fw-bold mb-4 d-flex align-items-center gap-2">
+                <i class="fas fa-code text-primary"></i>
+                <span class="lang-en">Technical Skills</span>
+                <span class="lang-ar d-none">المهارات التقنية</span>
+            </h2>
+            <div class="row g-3">
+                <div class="col-12 col-md-6">
+                    <div class="card h-100 p-3 bg-white shadow-sm border-0 rounded-3">
+                        <h3 class="h6 fw-bold mb-2 d-flex align-items-center gap-2">
+                            <i class="fas fa-desktop text-primary"></i>
+                            <span class="lang-en">IT & Systems</span>
+                            <span class="lang-ar d-none">تقنية المعلومات والأنظمة</span>
+                        </h3>
+                        <p class="text-muted text-sm m-0">
+                            <span class="lang-en">Strong computer proficiency, fast learner with any new system or
+                                digital platform.</span>
+                            <span class="lang-ar d-none">إلمام قوي بالحاسوب، سرعة في تعلم أي نظام أو منصة رقمية.</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="card h-100 p-3 bg-white shadow-sm border-0 rounded-3">
+                        <h3 class="h6 fw-bold mb-2 d-flex align-items-center gap-2">
+                            <i class="fas fa-laptop-code text-primary"></i>
+                            <span class="lang-en">Front-End Development</span>
+                            <span class="lang-ar d-none">تطوير الواجهات الأمامية</span>
+                        </h3>
+                        <p class="text-muted text-sm m-0">
+                            <span class="lang-en">Bootstrap, HTML, CSS, JavaScript — building and maintaining internal
+                                websites and pages.</span>
+                            <span class="lang-ar d-none">Bootstrap ، HTML، CSS، JavaScript، تطوير مواقع وصفحات داخلية
+                                للشركة.</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="card h-100 p-3 bg-white shadow-sm border-0 rounded-3">
+                        <h3 class="h6 fw-bold mb-2 d-flex align-items-center gap-2">
+                            <i class="fas fa-file-excel text-primary"></i>
+                            <span class="lang-en">Data & Productivity</span>
+                            <span class="lang-ar d-none">البيانات والإنتاجية</span>
+                        </h3>
+                        <p class="text-muted text-sm m-0">
+                            <span class="lang-en">Microsoft Excel (Advanced), Google Sheets, large-scale data
+                                processing.</span>
+                            <span class="lang-ar d-none">Microsoft Excel (متقدم)، Google Sheets، معالجة بيانات بحجم
+                                كبير.</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="card h-100 p-3 bg-white shadow-sm border-0 rounded-3">
+                        <h3 class="h6 fw-bold mb-2 d-flex align-items-center gap-2">
+                            <i class="fas fa-calculator text-primary"></i>
+                            <span class="lang-en">Finance & Operations</span>
+                            <span class="lang-ar d-none">العمليات والمالية</span>
+                        </h3>
+                        <p class="text-muted text-sm m-0">
+                            <span class="lang-en">Manual invoice processing, NDC platform, financial reporting.</span>
+                            <span class="lang-ar d-none">معالجة الفواتير اليدوية، منصة NDC، إعداد التقارير
+                                المالية.</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-4 pt-3 border-top">
+                <h3 class="h6 fw-bold mb-1">
+                    <span class="lang-en">Languages:</span>
+                    <span class="lang-ar d-none">اللغات:</span>
+                </h3>
+                <p class="text-muted text-sm m-0">
+                    <span class="lang-en">Arabic (Native), English (Basic)</span>
+                    <span class="lang-ar d-none">العربية (اللغة الأم)، الإنجليزية (أساسي)</span>
+                </p>
+            </div>
+        </section>
+
+        <!-- Education & Certifications -->
+        <section class="py-4">
+            <h2 class="h5 section-title text-uppercase fw-bold mb-4 d-flex align-items-center gap-2">
+                <i class="fas fa-graduation-cap text-primary"></i>
+                <span class="lang-en">Education & Certifications</span>
+                <span class="lang-ar d-none">التعليم والشهادات</span>
+            </h2>
+            <div class="d-flex flex-column gap-3">
+                <div>
+                    <h3 class="h6 fw-bold mb-1">
+                        <span class="lang-en">Cairo Institute for Journalism & Media (CEI)</span>
+                        <span class="lang-ar d-none">معهد القاهرة (CEI) للصحافة والإعلام</span>
+                    </h3>
+                    <p class="text-muted text-sm m-0">
+                        <span class="lang-en">Diploma, Journalism & Media</span>
+                        <span class="lang-ar d-none">دبلوم، الصحافة والإعلام</span>
+                    </p>
+                </div>
+                <div
+                    class="pt-3 border-top d-flex flex-column flex-md-row justify-content-between align-items-md-baseline">
+                    <div>
+                        <h3 class="h6 fw-bold mb-1">
+                            <span class="lang-en">Modern Society for Computer Technology & Information</span>
+                            <span class="lang-ar d-none">الجمعية الحديثة لتكنولوجيا الكمبيوتر والمعلومات</span>
+                        </h3>
+                        <p class="text-muted text-sm m-0">
+                            <span class="lang-en">Certificate – Windows OS, Web Programming Fundamentals</span>
+                            <span class="lang-ar d-none">شهادة – نظام Windows، أساسيات برمجة المواقع</span>
+                        </p>
+                    </div>
+                    <span class="badge bg-light text-dark border px-3 py-1.5 mt-2 mt-md-0 align-self-start">2019</span>
+                </div>
+            </div>
+        </section>
+
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Footer -->
+    <footer class="text-center py-4 text-muted text-xs border-top mt-5">
+        <p class="m-0">&copy; 2026 Ahmed Samir. All rights reserved.</p>
+    </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Download Modal -->
+    <div class="modal fade" id="downloadModal" tabindex="-1" aria-labelledby="downloadModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-sm">
+            <div class="modal-content rounded-3 shadow">
+                <div class="modal-header border-0 pb-0 d-flex align-items-center justify-content-between">
+                    <h5 class="modal-title fw-bold m-0" id="downloadModalLabel">
+                        <span class="lang-en">Download CV</span>
+                        <span class="lang-ar d-none">تحميل السيرة الذاتية</span>
+                    </h5>
+                    <button type="button" class="btn-close ms-auto" data-bs-dismiss="modal" aria-label="Close"
+                        style="margin-right: 0; margin-left: auto;"></button>
+                </div>
+                <div class="modal-body pt-2">
+                    <p class="text-muted text-sm mb-4">
+                        <span class="lang-en">Please select the version language you want to download:</span>
+                        <span class="lang-ar d-none">برجاء اختيار لغة النسخة المراد تحميلها:</span>
+                    </p>
+                    <div class="d-flex flex-column gap-2">
+                        <a href="Ahmed Eldeeb - English.pdf" download
+                            class="btn btn-primary w-100 d-flex align-items-center justify-content-center gap-2 py-2 fw-medium">
+                            <i class="fas fa-file-pdf text-white"></i> English Version
+                        </a>
+                        <a href="Ahmed Eldeeb - Arabic.pdf" download
+                            class="btn btn-light border w-100 d-flex align-items-center justify-content-center gap-2 py-2 fw-medium">
+                            <i class="fas fa-file-pdf text-danger"></i> النسخة العربية
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-  </body>
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- App Controls Script -->
+    <script>
+        const body = document.body;
+        const themeBtn = document.getElementById('theme-btn');
+        const langBtn = document.getElementById('lang-btn');
+        const headerText = document.getElementById('header-text');
+        const scrollTopBtn = document.getElementById('scroll-top-btn');
+
+        // السكربت المسؤول عن إظهار وإخفاء زرار السكرول أول ما تنزل تحت 100 بكسل
+        window.onscroll = function () {
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                scrollTopBtn.classList.add('show');
+            } else {
+                scrollTopBtn.classList.remove('show');
+            }
+        };
+
+        if (localStorage.getItem('bootstrap-theme') === 'dark') {
+            body.classList.add('dark-mode');
+            document.querySelector('.dark-none').classList.add('d-none');
+            document.querySelector('.dark-block').classList.remove('d-none');
+        }
+
+        themeBtn.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            const isDark = body.classList.contains('dark-mode');
+            localStorage.setItem('bootstrap-theme', isDark ? 'dark' : 'light');
+
+            document.querySelector('.dark-none').classList.toggle('d-none', isDark);
+            document.querySelector('.dark-block').classList.toggle('d-none', !isDark);
+        });
+
+        let currentLang = 'en';
+        langBtn.addEventListener('click', () => {
+            const html = document.documentElement;
+            const controlsContainer = document.querySelector('.navbar-controls');
+
+            if (currentLang === 'en') {
+                currentLang = 'ar';
+                html.setAttribute('dir', 'rtl');
+                html.setAttribute('lang', 'ar');
+                langBtn.innerText = 'English';
+
+                controlsContainer.classList.remove('ms-auto');
+                controlsContainer.classList.add('me-auto');
+
+                headerText.classList.remove('text-md-start');
+                headerText.classList.add('text-md-end');
+
+                document.querySelectorAll('.lang-en').forEach(el => el.classList.add('d-none'));
+                document.querySelectorAll('.lang-ar').forEach(el => el.classList.remove('d-none'));
+            } else {
+                currentLang = 'en';
+                html.setAttribute('dir', 'ltr');
+                html.setAttribute('lang', 'en');
+                langBtn.innerText = 'العربية';
+
+                controlsContainer.classList.remove('me-auto');
+                controlsContainer.classList.add('ms-auto');
+
+                headerText.classList.remove('text-md-end');
+                headerText.classList.add('text-md-start');
+
+                document.querySelectorAll('.lang-ar').forEach(el => el.classList.add('d-none'));
+                document.querySelectorAll('.lang-en').forEach(el => el.classList.remove('d-none'));
+            }
+        });
+    </script>
+</body>
 
 </html>
