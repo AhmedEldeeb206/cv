@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ahmed Samir Mostafa Eldeeb | Portfolio</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <div class="mouse-glow"></div>
+
+    <div class="layout-wrapper">
+
+        <!-- Sidebar -->
+        <header class="sidebar">
+            <div class="sidebar-content">
+                <div class="profile-section">
+                    <div class="avatar-container">
+                        <img src="ahmed.png" alt="Ahmed Samir" class="profile-img"
+                            onerror="this.src='https://via.placeholder.com/200x200?text=Ahmed'">
+                    </div>
+                    <h1 class="name-title">
+                        <span class="lang-en">Ahmed Eldeeb</span>
+                        <span class="lang-ar d-none">أحمد الديب</span>
+                    </h1>
+                    <p class="job-title">
+                        <span class="lang-en">Data Entry & Operations Specialist</span>
+                        <span class="lang-ar d-none">أخصائي عمليات وإدخال بيانات</span>
+                    </p>
+                </div>
+
+                <nav id="desktop-nav" class="nav-menu d-none d-lg-block">
+                    <ul class="nav flex-column">
+                        <li class="nav-item"><a class="nav-link active" href="#about"><span class="nav-num">01.</span>
+                                <span class="lang-en">About</span><span class="lang-ar d-none">نبذة عني</span></a></li>
+                        <li class="nav-item"><a class="nav-link" href="#experience"><span class="nav-num">02.</span>
+                                <span class="lang-en">Experience</span><span class="lang-ar d-none">الخبرات</span></a>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="#skills"><span class="nav-num">03.</span> <span
+                                    class="lang-en">Skills</span><span class="lang-ar d-none">المهارات</span></a></li>
+                        <li class="nav-item"><a class="nav-link" href="#education"><span class="nav-num">04.</span>
+                                <span class="lang-en">Education</span><span class="lang-ar d-none">التعليم</span></a>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="#contact"><span class="nav-num">05.</span> <span
+                                    class="lang-en">Contact</span><span class="lang-ar d-none">التواصل</span></a></li>
+                    </ul>
+                </nav>
+
+                <div class="sidebar-footer mt-auto text-center">
+                    <div class="social-links d-none d-lg-flex mb-4">
+                        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=ahmedwork206@gmail.com" target="_blank"
+                            title="Email"><i class="fas fa-envelope"></i></a>
+                        <a href="tel:+201005137642" title="Call"><i class="fas fa-phone"></i></a>
+                        <a href="https://wa.me/201005137642" target="_blank" title="WhatsApp"><i
+                                class="fab fa-whatsapp"></i></a>
+                        <a href="#" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                    <button id="lang-btn" class="btn-custom btn-secondary-outline w-100">عربى / AR</button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Mobile Navbar -->
+        <nav class="mobile-nav d-lg-none navbar fixed-top">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#hero">Ahmed.E</a>
+                <div class="d-flex align-items-center gap-3">
+                    <button id="lang-btn-mobile" class="btn-custom btn-secondary-outline"
+                        style="padding: 0.4rem 1rem;">AR</button>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto text-end">
+                        <li class="nav-item"><a class="nav-link" href="#about">01. About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#experience">02. Experience</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#skills">03. Skills</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#education">04. Education</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contact">05. Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="content-area">
+
+            <!-- Hero Section -->
+            <section id="hero" class="d-flex align-items-center min-vh-100 pb-5 stacking-section">
+                <div class="reveal-elem w-100">
+                    <p class="hero-label mb-3">
+                        <span class="lang-en">HELLO, MY NAME IS</span>
+                        <span class="lang-ar d-none">أهلاً بك، أنا</span>
+                    </p>
+                    <h2 class="hero-name">
+                        <span class="lang-en">Ahmed Samir Eldeeb.</span>
+                        <span class="lang-ar d-none">أحمد سمير الديب.</span>
+                    </h2>
+                    <h3 class="hero-subtitle">
+                        <span class="lang-en">Data Entry & Operations Specialist.</span>
+                        <span class="lang-ar d-none">أخصائي عمليات وإدخال بيانات.</span>
+                    </h3>
+                    <p class="hero-desc mt-4 mb-5">
+                        <span class="lang-en">Results-driven Data Entry and Operations Specialist with practical
+                            experience in high-volume data environments and financial operations. Focused on accuracy,
+                            workflow optimization, and leveraging technology to improve productivity.</span>
+                        <span class="lang-ar d-none">أمتلك خبرة عملية قوية في البيئات كثيفة البيانات والعمليات المالية.
+                            أتميز بدقة وسرعة عالية في إدخال ومراجعة البيانات، وتوظيف أدوات الذكاء الاصطناعي (AI) لتطوير
+                            أدوات التشغيل وأتمتة المهام الروتينية.</span>
+                    </p>
+                    <div class="hero-buttons d-flex gap-3">
+                        <button class="btn-custom btn-primary-outline" data-bs-toggle="modal"
+                            data-bs-target="#downloadCvModal">
+                            <span class="lang-en">Download CV</span>
+                            <span class="lang-ar d-none">تحميل الـ CV</span>
+                        </button>
+                        <a href="#contact" class="btn-custom btn-secondary-outline">
+                            <span class="lang-en">Contact Me</span>
+                            <span class="lang-ar d-none">تواصل معي</span>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- About Section -->
+            <section id="about" class="section-padding stacking-section">
+                <h3 class="section-heading"><span class="heading-num">01.</span>
+                    <span class="lang-en">About Me</span>
+                    <span class="lang-ar d-none">نبذة عني</span>
+                </h3>
+                <div class="row reveal-elem">
+                    <div class="col-lg-9 text-content">
+                        <p class="lang-en">
+                            Results-driven Data Entry and Operations Specialist with strong practical experience in
+                            high-volume data environments and financial operations. Adept at high-speed, accurate data
+                            processing, alongside a unique ability to leverage modern technology and AI tools to develop
+                            operational workflows, automate routine tasks, and support team performance.
+                        </p>
+                        <p class="lang-ar d-none">
+                            مدخل بيانات ومتخصص عمليات تشغيلية أمتلك خبرة عملية قوية في البيئات كثيفة البيانات والعمليات
+                            المالية. أتميز بدقة متناهية وسرعة عالية في إدخال ومراجعة البيانات، إلى جانب قدرتي الفريدة
+                            على توظيف التكنولوجيا الحديثة وأدوات الذكاء الاصطناعي لتطوير أدوات التشغيل.
+                        </p>
+                        <p class="lang-en">
+                            Proficient in institutional enterprise systems such as Orgasoft, NDC, and Zoho, ensuring
+                            precision and error-free records.
+                        </p>
+                        <p class="lang-ar d-none">
+                            أجيد التعامل الاحترافي مع الأنظمة المؤسسية (مثل Orgasoft ومنصات الطيران) لضمان دقة الأرقام
+                            وخلوها من الأخطاء.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Experience Section -->
+            <section id="experience" class="section-padding stacking-section">
+                <h3 class="section-heading"><span class="heading-num">02.</span>
+                    <span class="lang-en">Professional Experience</span>
+                    <span class="lang-ar d-none">الخبرة العملية</span>
+                </h3>
+                <div class="timeline reveal-elem">
+                    <div class="timeline-item">
+                        <div class="timeline-date">
+                            <span class="lang-en">November 2025 – October 2026</span>
+                            <span class="lang-ar d-none">نوفمبر 2025 – أكتوبر 2026</span>
+                        </div>
+                        <div class="timeline-content">
+                            <h4 class="role">
+                                <span class="lang-en">Data Processing & Operations Specialist</span>
+                                <span class="lang-ar d-none">أخصائي معالجة فواتير وعمليات</span>
+                            </h4>
+                            <p class="company">
+                                <span class="lang-en">Wonder Travel – Cairo, Egypt</span>
+                                <span class="lang-ar d-none">وندر ترافيل – القاهرة، مصر</span>
+                            </p>
+                            <ul class="job-list lang-en">
+                                <li>Handled end-to-end flight ticket processing via the NDC platform, from invoice
+                                    verification to executing financial ticket deductions.</li>
+                                <li>Designed and deployed custom Chrome Extensions utilizing AI tools to automate ticket
+                                    deductions and ledger entries on the NDC platform.</li>
+                                <li>Built workflow assistance tools to organize operational references, onboard new
+                                    hires, and troubleshoot daily system challenges.</li>
+                            </ul>
+                            <ul class="job-list lang-ar d-none">
+                                <li>معالجة فواتير الطيران متكاملة عبر منصة NDC، من التحقق من الفاتورة وصولاً لعمليات خصم
+                                    قيمة التذاكر مالياً.</li>
+                                <li>تطوير إضافات برمجية (Chrome Extensions) بأدوات الذكاء الاصطناعي لأتمتة عمليات خصم
+                                    التذاكر وتسجيل القيود.</li>
+                                <li>تصميم أدوات مساعدة لتنظيم مراجع العمل، وتقديم الدعم التقني وتدريب الموظفين الجدد.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-date">
+                            <span class="lang-en">September 2024 – October 2025</span>
+                            <span class="lang-ar d-none">سبتمبر 2024 – أكتوبر 2025</span>
+                        </div>
+                        <div class="timeline-content">
+                            <h4 class="role">
+                                <span class="lang-en">Data Entry & Assistant Accountant</span>
+                                <span class="lang-ar d-none">مساعد حسابات ومدخل بيانات</span>
+                            </h4>
+                            <p class="company">
+                                <span class="lang-en">Egyptian Cosmetics Supply Co. – Cairo, Egypt</span>
+                                <span class="lang-ar d-none">الشركة المصرية لتوريد مستحضرات التجميل – القاهرة</span>
+                            </p>
+                            <ul class="job-list lang-en">
+                                <li>Managed accurate data entry and logging of invoices and records using the Orgasoft
+                                    enterprise system.</li>
+                                <li>Prepared detailed financial reports to track expenses and project budgets.</li>
+                            </ul>
+                            <ul class="job-list lang-ar d-none">
+                                <li>إدخال وتسجيل البيانات والفواتير بدقة عالية على سيستم المؤسسة Orgasoft.</li>
+                                <li>إعداد تقارير مالية تفصيلية لتتبع المصروفات وميزانيات المشاريع.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Skills Section -->
+            <section id="skills" class="section-padding stacking-section">
+                <h3 class="section-heading"><span class="heading-num">03.</span>
+                    <span class="lang-en">Technical Skills</span>
+                    <span class="lang-ar d-none">المهارات التقنية</span>
+                </h3>
+                <div class="row g-4 reveal-elem">
+                    <div class="col-md-6 skill-box">
+                        <h5 class="lang-en">Data Management</h5>
+                        <h5 class="lang-ar d-none">إدارة البيانات</h5>
+                        <p class="lang-en">High-speed and high-accuracy data entry, invoice processing, and large-scale
+                            spreadsheet management.</p>
+                        <p class="lang-ar d-none">إدخال البيانات بدقة وسرعة فائقة، معالجة وتسجيل الفواتير، وإدارة
+                            الجداول الضخمة.</p>
+                    </div>
+                    <div class="col-md-6 skill-box">
+                        <h5 class="lang-en">Process Automation & AI</h5>
+                        <h5 class="lang-ar d-none">أتمتة العمليات والذكاء الاصطناعي</h5>
+                        <p class="lang-en">Leveraging AI to build custom Chrome Extensions and automate repetitive
+                            workflows.</p>
+                        <p class="lang-ar d-none">توظيف الذكاء الاصطناعي لبناء إضافات برمجية (Chrome Extensions) تسرّع
+                            العمليات.</p>
+                    </div>
+                    <div class="col-md-6 skill-box">
+                        <h5 class="lang-en">Enterprise Systems</h5>
+                        <h5 class="lang-ar d-none">الأنظمة المؤسسية</h5>
+                        <p>Orgasoft, NDC, Zoho.</p>
+                    </div>
+                    <div class="col-md-6 skill-box">
+                        <h5 class="lang-en">Productivity Software</h5>
+                        <h5 class="lang-ar d-none">برامج الإنتاجية</h5>
+                        <p class="lang-en">Advanced Microsoft Excel, Google Sheets, Microsoft Office.</p>
+                        <p class="lang-ar d-none">إتقان تام لـ Excel و Google Sheets وحزمة الأوفيس.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Education Section -->
+            <section id="education" class="section-padding stacking-section">
+                <h3 class="section-heading"><span class="heading-num">04.</span>
+                    <span class="lang-en">Education</span>
+                    <span class="lang-ar d-none">التعليم</span>
+                </h3>
+                <div class="timeline reveal-elem">
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h4 class="role">
+                                <span class="lang-en">Cairo Institute (CEI) for Journalism and Media</span>
+                                <span class="lang-ar d-none">معهد القاهرة (CEI) للصحافة والإعلام</span>
+                            </h4>
+                            <p class="company">
+                                <span class="lang-en">Cairo, Egypt</span>
+                                <span class="lang-ar d-none">القاهرة، مصر</span>
+                            </p>
+                            <p class="edu-desc lang-en">Completed practical training focused on modern file organization
+                                and digital technologies.</p>
+                            <p class="edu-desc lang-ar d-none">تدريب عملي على تنظيم الملفات وبرامج مايكروسوفت أوفيس
+                                المتخصصة.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">2019</div>
+                        <div class="timeline-content">
+                            <h4 class="role">
+                                <span class="lang-en">Modern Association for Computer and IT</span>
+                                <span class="lang-ar d-none">الجمعية الحديثة لتكنولوجيا الكمبيوتر والمعلومات</span>
+                            </h4>
+                            <p class="edu-desc lang-en">Certified in Windows operating systems and computer
+                                fundamentals.</p>
+                            <p class="edu-desc lang-ar d-none">شهادة معتمدة في نظام التشغيل Windows وأساسيات الكمبيوتر.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact Section -->
+            <section id="contact" class="section-padding text-center stacking-section">
+                <div class="contact-inner mx-auto" style="max-width: 600px;">
+                    <p class="contact-label"><span class="heading-num">05.</span>
+                        <span class="lang-en">What's Next?</span>
+                        <span class="lang-ar d-none">الخطوة التالية؟</span>
+                    </p>
+                    <h2 class="contact-title mt-2 mb-4">
+                        <span class="lang-en">Get In Touch</span>
+                        <span class="lang-ar d-none">تواصل معي</span>
+                    </h2>
+                    <p class="contact-desc mx-auto mb-5">
+                        <span class="lang-en">I'm currently looking for new opportunities. Whether you have a question
+                            or just want to say hi, my inbox is always open.</span>
+                        <span class="lang-ar d-none">أنا منفتح حالياً لفرص عمل جديدة. سواء كان لديك استفسار أو فرصة
+                            تناسب خبراتي، يسعدني تواصلك وسأقوم بالرد في أقرب وقت.</span>
+                    </p>
+
+                    <div class="contact-info d-flex flex-column gap-3 mb-5 align-items-center">
+                        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=ahmedwork206@gmail.com" target="_blank"
+                            class="contact-link"><i class="fas fa-envelope me-2"></i> ahmedwork206@gmail.com</a>
+                        <a href="tel:+201005137642" class="contact-link"><i class="fas fa-phone-alt me-2"></i> +20 100
+                            513 7642</a>
+                        <a href="https://wa.me/201005137642" target="_blank" class="contact-link"><i
+                                class="fab fa-whatsapp me-2"></i> WhatsApp</a>
+                    </div>
+
+                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=ahmedwork206@gmail.com" target="_blank"
+                        class="btn-custom btn-primary-outline mt-4">
+                        <span class="lang-en">Say Hello</span>
+                        <span class="lang-ar d-none">إرسال بريد</span>
+                    </a>
+                </div>
+
+                <footer class="footer text-center mt-5 pt-5 pb-4 border-0">
+                    <p class="mb-1">Ahmed Samir Mostafa Eldeeb</p>
+                    <p class="mb-2 job-title-footer">Data Entry & Operations Specialist</p>
+                    <p class="copyright">© 2026 All Rights Reserved.</p>
+                </footer>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- CV Download Modal -->
+    <div class="modal fade custom-modal" id="downloadCvModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header border-0 pb-0">
+                    <h5 class="modal-title fs-5 fw-bold text-white">
+                        <span class="lang-en">Download CV</span>
+                        <span class="lang-ar d-none">تحميل السيرة الذاتية</span>
+                    </h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body py-4">
+                    <p class="text-secondary text-sm mb-4">
+                        <span class="lang-en">Please select the language version:</span>
+                        <span class="lang-ar d-none">برجاء اختيار لغة النسخة المراد تحميلها:</span>
+                    </p>
+                    <div class="d-flex flex-column gap-3">
+                        <a href="AhmedElDeeb-Data Entry-EN.pdf" download class="btn-custom btn-primary-outline text-center w-100">
+                            <i class="fas fa-file-pdf me-2"></i> English Version
+                        </a>
+                        <a href="AhmedElDeeb-Data Entry-AR.pdf" download
+                            class="btn-custom btn-secondary-outline text-center w-100 text-white border-light">
+                            <i class="fas fa-file-pdf me-2"></i> النسخة العربية
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
